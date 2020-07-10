@@ -30,9 +30,9 @@ This module can create CLB listener.
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | port | Port of the CLB listener. | number | null | no 
-| protocol | Type of protocol within the listener, and available values are 'TCP', 'UDP', 'HTTP', 'HTTPS' and 'TCP_SSL'. | string | %!s(<nil>) | no 
+| protocol | Type of protocol within the listener, and available values are 'TCP', 'UDP', 'HTTP', 'HTTPS' and 'TCP_SSL'. | string |  | no 
 | region | TencentCloud region to launch resources. | string |  | no 
-| clb_id | Id of the CLB. | string | %!s(<nil>) | no 
+| clb_id | Id of the CLB. | string |  | no 
 | listener_name | Name of the CLB listener, and available values can only be Chinese characters, English letters, numbers, underscore and hyphen '-'. | string | tf-modules-clb-listener | no 
 
 
