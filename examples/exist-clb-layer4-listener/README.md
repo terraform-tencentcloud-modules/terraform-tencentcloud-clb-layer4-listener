@@ -1,4 +1,4 @@
-# CLB Module Example
+# CLB Layer4 Listener Module Example
 
 This module will create a new CLB attachment instance using existing CLB instance and CLB listener.
 

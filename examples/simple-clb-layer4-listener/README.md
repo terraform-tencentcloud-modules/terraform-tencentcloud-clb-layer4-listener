@@ -1,10 +1,10 @@
-# CLB Module Example
+# CLB Layer4 Listener Module Example
 
 This module will create a new CLB listener instance and new CLB attachment instance.
 
 ## Usage
 
-To run this example, you need first replace the configuration like `network_type`, `clb_name`, `vpc_id`, `subnet_id` etc, and then execute:
+To run this example, you need first replace the configuration like `clb_id`, `listener_name`, `port`, `protocol` etc, and then execute:
 
 ```bash
 $ terraform init

@@ -62,5 +62,5 @@ output "scheduler" {
 # attachment outputs
 output "backend_instances" {
   description = "Information of the backends to be attached."
-  value       = local.backend_instances_read
+  value       = length(local.targets) > 0 ? local.backend_instances_read : []
 }

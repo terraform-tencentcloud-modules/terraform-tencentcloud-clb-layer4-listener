@@ -34,6 +34,12 @@ variable "protocol" {
   default     = null
 }
 
+variable "health_check_switch" {
+  type        = bool
+  description = "Indicates whether health check is enabled."
+  default     = false
+}
+
 variable "health_check_time_out" {
   type        = number
   description = "Response timeout of health check. The value range is 2-60 sec, and the default is 2 sec. Response timeout needs to be less than check interval."
