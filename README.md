@@ -1,4 +1,4 @@
-# TencentCloud CLB layer4 listener Module for Terraform
+# TencentCloud CLB Layer4 Listener Module for Terraform
 
 ## terraform-tencentcloud-clb-layer4-listener
 
@@ -37,6 +37,7 @@ module "clb-listener" {
 ## Conditional Creation
 
 This module can create CLB listener.
+It is possible to use existing CLB listener when specify `listener_id` parameter.
 
 ## Inputs
 

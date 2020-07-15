@@ -49,9 +49,9 @@ locals {
   ])
 
   this_listener_info = data.tencentcloud_clb_listeners.this.listener_list
-  targets            = length(var.backend_instances) > 0 ? tencentcloud_clb_attachment.this[0].targets : []
+  targets            = concat(tencentcloud_clb_attachment.this.*.targets, [""])[0]
   clb_id             = var.clb_id
-  listener_id        = var.listener_id != "" ? var.listener_id : tencentcloud_clb_listener.this[0].id
+  listener_id        = var.listener_id != "" ? var.listener_id : concat(tencentcloud_clb_listener.this.*.id, [""])[0]
   backend_instances_read = flatten([
     for _, obj in local.targets : {
       instance_id = lookup(obj, "instance_id")
