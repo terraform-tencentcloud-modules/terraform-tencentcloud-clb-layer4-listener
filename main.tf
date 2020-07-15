@@ -10,6 +10,7 @@ resource "tencentcloud_clb_listener" "this" {
   listener_name              = var.listener_name
   port                       = var.port
   protocol                   = var.protocol
+  health_check_switch        = var.health_check_switch
   health_check_time_out      = var.health_check_time_out
   health_check_interval_time = var.health_check_interval_time
   health_check_health_num    = var.health_check_health_num

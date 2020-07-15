@@ -3,7 +3,7 @@ provider "tencentcloud" {
 }
 
 module "clb-listener" {
-  source = "../../../terraform-tencentcloud-clb-listener"
+  source = "../../../terraform-tencentcloud-clb-layer4-listener"
 
   clb_id      = "lb-buhw9rpc"
   listener_id = "lbl-ca8l2bak"

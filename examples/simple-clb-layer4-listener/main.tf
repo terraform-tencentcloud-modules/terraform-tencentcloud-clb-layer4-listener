@@ -17,7 +17,7 @@ module "clb-instance" {
 }
 
 module "clb-listener" {
-  source = "../../../terraform-tencentcloud-clb-listener"
+  source = "../../../terraform-tencentcloud-clb-layer4-listener"
 
   clb_id        = module.clb-instance.clb_id
   listener_name = "tf-clb-listener-module"
