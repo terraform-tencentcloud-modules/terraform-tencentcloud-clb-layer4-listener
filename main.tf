@@ -10,11 +10,11 @@ resource "tencentcloud_clb_listener" "this" {
   listener_name              = var.listener_name
   port                       = var.port
   protocol                   = var.protocol
-  health_check_switch        = var.health_check_switch
-  health_check_time_out      = var.health_check_time_out
-  health_check_interval_time = var.health_check_interval_time
-  health_check_health_num    = var.health_check_health_num
-  health_check_unhealth_num  = var.health_check_unhealth_num
+  health_check_switch        = lookup(var.health_check, "health_check_switch", false)
+  health_check_time_out      = lookup(var.health_check, "health_check_time_out", 2)
+  health_check_interval_time = lookup(var.health_check, "health_check_interval_time", 5)
+  health_check_health_num    = lookup(var.health_check, "health_check_health_num", 3)
+  health_check_unhealth_num  = lookup(var.health_check, "health_check_unhealth_num", 3)
   session_expire_time        = var.scheduler == "WRR" ? var.session_expire_time : null
   scheduler                  = var.scheduler
 }
@@ -49,7 +49,7 @@ locals {
   ])
 
   this_listener_info = data.tencentcloud_clb_listeners.this.listener_list
-  targets            = concat(tencentcloud_clb_attachment.this.*.targets, [""])[0]
+  targets            = concat(tencentcloud_clb_attachment.this.*.targets, [{}])[0]
   clb_id             = var.clb_id
   listener_id        = var.listener_id != "" ? var.listener_id : concat(tencentcloud_clb_listener.this.*.id, [""])[0]
   backend_instances_read = flatten([
