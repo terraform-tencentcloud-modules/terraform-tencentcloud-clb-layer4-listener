@@ -57,7 +57,6 @@ It is possible to use existing CLB listener when specify `listener_id` parameter
 | health_check | The CLB layer4 listener health check settings. Supported fields are `health_check_switch`, `health_check_time_out`, `health_check_interval_time`, `health_check_health_num` and `health_check_unhealth_num`. | map | {} | no 
 | listener_name | Name of the CLB listener, and available values can only be Chinese characters, English letters, numbers, underscore and hyphen '-'. | string | tf-modules-clb-listener | no 
 | backend_instances | Information of the backends to be attached. if omitted, will create CLB listener only without the attachment. | list | [] | no 
-| region | TencentCloud region to launch resources. | string |  | no 
 | clb_id | Id of the CLB. | string |  | yes 
 | listener_id | Id of the CLB listener | string |  | no 
 

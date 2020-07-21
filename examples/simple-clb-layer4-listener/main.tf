@@ -1,7 +1,3 @@
-provider "tencentcloud" {
-  region = "ap-guangzhou"
-}
-
 module "clb-instance" {
   source = "../../../terraform-tencentcloud-clb"
 
@@ -32,12 +28,12 @@ module "clb-layer4-listener" {
   }
   backend_instances = [
     {
-      instance_id = "ins-hkdom3go"
+      instance_id = "ins-b8bowoum"
       port        = 8899
       weight      = 50
     },
     {
-      instance_id = "ins-m16vpbkc"
+      instance_id = "ins-mabscyug"
       port        = 8900
       weight      = 50
     }
