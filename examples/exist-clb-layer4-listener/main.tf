@@ -1,5 +1,5 @@
 module "clb-layer4-listener" {
-  source = "../../../terraform-tencentcloud-clb-layer4-listener"
+  source = "terraform-tencentcloud-modules/clb-layer4-listener/tencentcloud"
 
   clb_id      = "lb-85u7q77s"
   listener_id = "lbl-jf89ory8"
