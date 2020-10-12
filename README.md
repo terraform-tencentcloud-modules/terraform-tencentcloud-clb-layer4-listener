@@ -13,7 +13,7 @@ The following resources are included.
 
 ```hcl
 module "clb-layer4-listener" {
-  source = "../../../terraform-tencentcloud-clb-layer4-listener"
+  source = "terraform-tencentcloud-modules/clb-layer4-listener/tencentcloud"
 
   clb_id        = module.clb-instance.clb_id
   listener_name = "tf-clb-listener-module"
