@@ -1,8 +1,3 @@
-variable "region" {
-  description = "TencentCloud region to launch resources."
-  default     = ""
-}
-
 # clb instance variables
 variable "clb_id" {
   description = "Id of the CLB."
@@ -34,34 +29,22 @@ variable "protocol" {
   default     = null
 }
 
-variable "health_check_switch" {
-  type        = bool
-  description = "Indicates whether health check is enabled."
-  default     = false
-}
-
-variable "health_check_time_out" {
-  type        = number
-  description = "Response timeout of health check. The value range is 2-60 sec, and the default is 2 sec. Response timeout needs to be less than check interval."
-  default     = 2
-}
-
-variable "health_check_interval_time" {
-  type        = number
-  description = "Interval time of health check. The value range is 5-300 sec, and the default is 5 sec."
-  default     = 5
-}
-
-variable "health_check_health_num" {
-  type        = number
-  description = "Health threshold of health check, and the default is 3. If a success result is returned for the health check for 3 consecutive times, the backend CVM is identified as healthy. The value range is 2-10."
-  default     = 3
-}
-
-variable "health_check_unhealth_num" {
-  type        = number
-  description = "Unhealthy threshold of health check, and the default is 3. If a success result is returned for the health check 3 consecutive times, the CVM is identified as unhealthy. The value range is 2-10."
-  default     = 3
+variable "health_check" {
+  type = object({
+    health_check_switch        = bool
+    health_check_time_out      = number
+    health_check_interval_time = number
+    health_check_health_num    = number
+    health_check_unhealth_num  = number
+  })
+  description = "The CLB layer4 listener health check settings. Supported fields are `health_check_switch`, `health_check_time_out`, `health_check_interval_time`, `health_check_health_num` and `health_check_unhealth_num`."
+  default = {
+    health_check_switch        = false
+    health_check_time_out      = 2
+    health_check_interval_time = 5
+    health_check_health_num    = 3
+    health_check_unhealth_num  = 3
+  }
 }
 
 variable "session_expire_time" {
